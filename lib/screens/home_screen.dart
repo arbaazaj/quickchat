@@ -6,13 +6,13 @@ class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage>
+class HomePageState extends State<HomePage>
     with TickerProviderStateMixin, WidgetsBindingObserver {
   CollectionReference users = FirebaseFirestore.instance.collection('Users');
-  var onlineStatus;
+  var onlineStatus = 'Offline';
 
   @override
   void initState() {
@@ -21,13 +21,9 @@ class _HomePageState extends State<HomePage>
   }
 
   Future<void> updateStatusToOnline() {
-
     final docID = users.id;
 
-    return users
-        .doc(docID)
-        .update({'online': true})
-        .then((value) {
+    return users.doc(docID).update({'online': true}).then((value) {
       onlineStatus = 'Online';
       if (kDebugMode) {
         print('Status changed to Online!');
@@ -36,13 +32,9 @@ class _HomePageState extends State<HomePage>
   }
 
   Future<void> updateStatusToOffline() {
-
     final docID = users.id;
 
-    return users
-        .doc(docID)
-        .update({'online': false})
-        .then((value) {
+    return users.doc(docID).update({'online': false}).then((value) {
       onlineStatus = 'Offline';
       if (kDebugMode) {
         print('Status changed to Offline!');
@@ -108,13 +100,22 @@ class _HomePageState extends State<HomePage>
                   Map<String, dynamic> data =
                       document.data()! as Map<String, dynamic>;
                   return ListTile(
-                    leading: CircleAvatar(
-                      child: Image.asset('assets/default_avatar.png'),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(32.0),
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      child: const CircleAvatar(
+                        child: Icon(Icons.person),
+                      ),
                     ),
-                    title: Text(data['fname']),
-                    subtitle: onlineStatus == null
+                    title: Text(data['fname'],
+                        style: const TextStyle(
+                            fontSize: 20.0, fontWeight: FontWeight.bold)),
+                    subtitle: onlineStatus.isEmpty
                         ? const Text('Null value')
-                        : Text(onlineStatus),
+                        : Text(
+                            onlineStatus,
+                            style: const TextStyle(fontWeight: FontWeight.bold),
+                          ),
                   );
                 }).toList(),
               );
