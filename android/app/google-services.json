@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "496725802179",
+    "firebase_url": "https://mychatapp-91295.firebaseio.com",
+    "project_id": "mychatapp-91295",
+    "storage_bucket": "mychatapp-91295.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496725802179:android:3fe4e10af486472bcef676",
+        "android_client_info": {
+          "package_name": "com.quickchat.quickchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496725802179-b3ecjj0vj30kv78htsd7virqmkuss5ha.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quickchat.quickchat",
+            "certificate_hash": "7e5743f3168cd497bb9b57df74b8230cd772a34e"
+          }
+        },
+        {
+          "client_id": "496725802179-uveup2b458pk6k4jmkc2ib38cmdftfi5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAx1ijgyRfPEAZRZsvCT8hFK4J0HCnVOE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496725802179-uveup2b458pk6k4jmkc2ib38cmdftfi5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
