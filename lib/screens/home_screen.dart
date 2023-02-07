@@ -109,12 +109,13 @@ class HomePageState extends State<HomePage>
                     ),
                     title: Text(data['fname'],
                         style: const TextStyle(
+                          color: Colors.deepPurple,
                             fontSize: 20.0, fontWeight: FontWeight.bold)),
                     subtitle: onlineStatus.isEmpty
                         ? const Text('Null value')
                         : Text(
                             onlineStatus,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.deepPurple.shade100),
                           ),
                   );
                 }).toList(),

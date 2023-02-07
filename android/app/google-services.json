@@ -38,6 +38,13 @@
             {
               "client_id": "496725802179-uveup2b458pk6k4jmkc2ib38cmdftfi5.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "496725802179-n041pdpfk6u0ecneo68f1siqhm0g7lg8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.quickchat.quickchat"
+              }
             }
           ]
         }
